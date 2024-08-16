@@ -11,14 +11,14 @@
 				</div>
 				<div class="about-thumb3 mt-70"> 
 					<div class="video-wrap about-img-1">
-						<img src="{{$module->image}}" alt="{{$module->top}}">
+						<img src="{{asset($module->image)}}" alt="{{$module->top}}">
 					</div>
 				</div>                                  
 			</div>
 			<div class="col-xl-5 col-md-8">
 				<div class="about-thumb3 mb-30"> 
 					<div class="about-img-2">
-						<img src="{{$module->image2}}" alt="{{$module->top}}">
+						<img src="{{asset($module->image2)}}" alt="{{$module->top}}">
 					</div>
 				</div>
 				<div class="btn-group mt-35">
