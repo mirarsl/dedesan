@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="assets/css/magnific-popup.min.css">
 	<link rel="stylesheet" href="assets/css/slick.min.css">
 	<link rel="stylesheet" href="assets/css/nice-select.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/style.css?ver={{rand(1111,9999)}}">
 	@stack('links')
 </head>
 <body>
