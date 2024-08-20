@@ -2496,7 +2496,7 @@ textarea.is-invalid {
   /* Small devices */
 }
 .play-btn-wrap:hover {
-  color: var(--theme-color);
+  color: white
 }
 @media (max-width: 767px) {
   .play-btn-wrap {
@@ -2692,7 +2692,7 @@ h3.sec-title {
   position: relative;
   font-weight: 400;
   font-family: var(--title-font);
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .sub-title i, .sub-title svg,
 .sub-title img {
@@ -8858,23 +8858,10 @@ li.trackback {
 .hero-contact-bg-img {
   position: absolute;
   right: 0;
-  left: calc((100% - var(--main-container)) / 2);
+  left: 0;
   z-index: -1;
   top: 0;
   bottom: 0;
-  border-radius: 0 0 50px 0;
-  /* Medium Large devices */
-  /* Medium devices */
-}
-@media (max-width: 1399px) {
-  .hero-contact-bg-img {
-    left: 0;
-  }
-}
-@media (max-width: 991px) {
-  .hero-contact-bg-img {
-    border-radius: 0;
-  }
 }
 
 .hero-contact-bg-img > img{
@@ -9775,7 +9762,6 @@ li.trackback {
   position: relative;
   display: inline-block;
   height: 100%;
-  padding-right: 116px;
   padding-bottom: 50px;
   /* Medium Large devices */
   /* Large devices */
@@ -9785,7 +9771,7 @@ li.trackback {
 .about-thumb1 .about-img-1 {
   position: relative;
   z-index: 1;
-  padding-right: 45px;
+  height: 100%;
 }
 .about-thumb1 .about-img-1:after {
   content: "";
@@ -9793,32 +9779,15 @@ li.trackback {
   height: 150px;
   width: 15px;
   background: var(--theme-color);
-  z-index: -1;
+  z-index: 1;
   right: 0;
   top: 0;
   border-radius: 0px;
   animation: jumpReverseAni 7s linear infinite;
 }
-@media (max-width: 1399px) {
-  .about-thumb1 {
-    padding-right: 60px;
-  }
-}
-@media (max-width: 1199px) {
-  .about-thumb1 {
-    padding-right: 150px;
-  }
-}
-@media (max-width: 991px) {
-  .about-thumb1 {
-    padding-right: 60px;
-  }
-}
-@media (max-width: 575px) {
-  .about-thumb1 {
-    padding-bottom: 190px;
-    padding-right: 20px;
-  }
+.about-thumb1 .about-img-1 img{
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-counter-wrap {
@@ -11528,6 +11497,7 @@ li.trackback {
 }
 .client-logo img {
   height: 100px;
+  width: 100%;
   object-fit: contain;
 }
 .client-logo:hover {
@@ -11916,7 +11886,7 @@ li.trackback {
 .video-wrap2 .play-btn.style8 i {
   --icon-size: 64px;
   background: var(--title-color);
-  color: var(--theme-color);
+  color: white;
 }
 .video-wrap2 .play-btn.style8:after, .video-wrap2 .play-btn.style8:before {
   border-color: rgba(3, 5, 25, 0.04);
@@ -11962,8 +11932,8 @@ li.trackback {
   position: absolute;
   left: 0;
   bottom: 0;
-  top: -420px;
-  width: 45.3%;
+  top: -280px;
+  width: 47.5%;
   /* Medium devices */
 }
 @media (max-width: 991px) {
@@ -12986,13 +12956,13 @@ li.trackback {
   margin-bottom: 40px;
 }
 .cta-wrap4 .cta-title {
-  font-size: 90px;
+  font-size: 80px;
   font-weight: 700;
   margin-bottom: 0;
   margin-top: -0.3em;
 }
 .cta-wrap4 .cta-title.style2 {
-  font-size: 120px;
+  font-size: 80px;
   font-weight: 600;
   -webkit-text-stroke: 1px var(--white-color);
   color: transparent;
@@ -13004,10 +12974,10 @@ li.trackback {
     padding: 150px 0;
   }
   .cta-wrap4 .cta-title {
-    font-size: 70px;
+    font-size: 50px;
   }
   .cta-wrap4 .cta-title.style2 {
-    font-size: 70px;
+    font-size: 50px;
   }
 }
 @media (max-width: 1199px) {
@@ -13539,6 +13509,8 @@ li.trackback {
 }
 .wcu-card-icon img {
   transition: 0.4s;
+  filter: invert(1);
+  width: 50px;
 }
 .wcu-card .wcu-card-title {
   font-size: 24px;
@@ -14325,7 +14297,7 @@ li.trackback {
   position: absolute;
   inset: 0;
   background: linear-gradient(110.38deg, #15161C 11.12%, rgba(21, 22, 28, 0.1) 75.6%);
-  opacity: 0;
+  opacity: 1;
   transition: 0.4s;
 }
 .portfolio-card.style5 .portfolio-card-details {
@@ -14339,7 +14311,7 @@ li.trackback {
 }
 .portfolio-card.style5 .portfolio-card-details .media-left {
   margin-bottom: auto;
-  opacity: 0;
+  opacity: 1;
   transform: translate(0, 30px);
   transition: 0.4s;
 }
@@ -14369,16 +14341,16 @@ li.trackback {
   bottom: auto;
   left: auto;
   transform: translate(0, -30px);
+  opacity: 1;
 }
 .portfolio-card.style5:hover:after {
-  opacity: 1;
+  opacity: 0;
 }
 .portfolio-card.style5:hover .portfolio-card-details .media-left {
   transform: none;
-  opacity: 1;
+  opacity: 0;
 }
 .portfolio-card.style5:hover .btn {
-  opacity: 1;
   transform: none;
 }
 @media (max-width: 1199px) {
