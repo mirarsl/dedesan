@@ -8,7 +8,7 @@
    <div id="timer"></div>
   </div>
   <div class="btn-wrap justify-content-center">
-   <a href="#" class="btn style2">{{$module->button}} <i class="ri-arrow-right-up-line"></i></a>
+   <a href="{{route('project',$module->data()->first()->slug)}}" class="btn style2">{{$module->button}} <i class="ri-arrow-right-up-line"></i></a>
   </div>
  </div>
 </div>
