@@ -1,7 +1,7 @@
 <div class="hero-wrapper hero-4" id="hero">
 	<div class="hero-slider4 global-carousel" data-slide-show="1" data-fade="true">
 		@foreach ($module->data() as $item)
-		<div class="hero-slide" data-overlay="title" data-opacity="4">
+		<div class="hero-slide" data-overlay="title" data-opacity="7">
 			<img src="{{asset($item->image)}}" alt="">
 			<div class="container">
 				<div class="hero-style4">
@@ -11,9 +11,9 @@
 					</div>
 					<div class="row align-items-center">
 						<div class="col-xxl-7 col-xl-8">
-							<div class="hero-subtitle" data-ani="slider-custom-anim-left" data-ani-delay="0.1s">{{setting('site.title')}} <img src="assets/img/icon/long-arrow-right2.svg" alt="img"></div>
-							<h2 class="hero-title" data-ani="slider-custom-anim-left" data-ani-delay="0.1s">{{$item->title}}</h2>
-							<p class="hero-text" data-ani="slider-custom-anim-left" data-ani-delay="0.2s">{{$item->text}}</p>
+							<div class="hero-subtitle">{{setting('site.title')}} <img src="assets/img/icon/long-arrow-right2.svg" alt="img"></div>
+							<h2 class="hero-title">{{$item->title}}</h2>
+							<p class="hero-text">{{$item->text}}</p>
 						</div>
 						@if (!(empty($item->button1_title)) && !(empty($item->button1_link)))
 						<div class="col-xxl-5 col-xl-4 text-xl-center">
