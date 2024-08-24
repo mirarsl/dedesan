@@ -14181,6 +14181,13 @@ li.trackback {
   color: var(--title-color);
 }
 
+.portfolio-card.style-certificate .portfolio-card-thumb img{
+  height: auto;
+}
+.portfolio-card.style-certificate .portfolio-card-details{
+  padding: 25px 25px 15px;
+}
+
 /* Portfolio 3 ---------------------------------- */
 .portfolio-slider3 .global-carousel {
   margin-right: -300px;

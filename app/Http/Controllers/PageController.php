@@ -52,7 +52,6 @@ class PageController extends Controller
             $Page = $Re["Page"];
             $Meta = $Re["Meta"];
             $Other = $Re["Other"];
-            $Route = $Re["Route"];
             $View = $Re["View"] ?? null;
         }
         if (empty($Page) || empty($Meta))
@@ -71,15 +70,15 @@ class PageController extends Controller
         SEOTools::twitter()->setTitle(SEOTools::getTitle());
         SEOTools::jsonLd()->setTitle(SEOTools::getTitle());
         SEOTools::jsonLd()->addImage(url(asset($Page->image)));
-        return view("pages.details", compact("Page", "Meta", "Other", 'Route','View'));
+        return view("pages.details", compact("Page", "Meta", "Other", 'View'));
     }
 
-    function product($slug)
+    function project($slug)
     {
-        $Meta = Page::where('slug', 'products')->first();
+        $Meta = Page::where('slug', 'projeler')->first();
         $Product = Project::where("slug", $slug)->active()->first();
         $Others = Project::where("slug", '!=', $slug)->order()->active()->limit(4, 0)->get();
-        return ['Page' => $Product, 'Other' => $Others, 'Meta' => $Meta, 'Route' => 'product', 'View' => 'product-details'];
+        return ['Page' => $Product, 'Other' => $Others, 'Meta' => $Meta, 'View' => 'project-details'];
 
     }
     function recipe($slug)

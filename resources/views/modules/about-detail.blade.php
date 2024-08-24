@@ -1,42 +1,20 @@
-<div class="home-about" id="{{str()->slug($module->title)}}">
+<div class="about-area-2 space-top overflow-hidden">
   <div class="container">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-lg-6 col-md-12">
-        <div class="home-about-left">
-          <div class="home-about-img">
-            <figure class="reveal image-anime">
-              <img src="{{asset($module->data()->image1)}}" alt="{{setting('site.title')}}">
-            </figure>
-          </div>
-          
-          <div class="home-about-since">
-            @php
-            $since =  explode(' ',$module->top);
-            @endphp
-            <div class="h3">{{$since[0]}}</div>
-            <div class="h2">{{isset($since[1]) ? $since[1] : ''}}</div>
+    <div class="row gx-60 align-items-start flex-row-reverse">
+      <div class="col-xl-6">
+        <div class="about-thumb2 mb-60 mb-xl-0"> 
+          <div class="about-img-1">
+            <img src="{{asset($module->data()->image1)}}" alt="{{$module->title}}">
           </div>
         </div>
       </div>
-      <div class="col-lg-10 mt-5 text-center">
-        <div class="section-title">
-          <div class="h3 wow fadeInUp" data-wow-delay="0.50s">{{setting('site.title')}}</div>
-          <h2 class="text-anime">{{$module->title}}</h2>
-        </div>
-        
-        <div class="home-about-content wow fadeInUp" data-wow-delay="0.75s">
-          {!! $module->text !!}
-        </div>
-        {!! $module->data()->about !!}
+      <div class="col-xl-6">
+        <div class="title-area mb-25">
+          <span class="sub-title">{{$module->top}}</span>
+          <h2 class="sec-title">{{$module->title}}</h2>
+          <p class="sec-text">{!! $module->data()->about !!}</p>
+        </div>             
       </div>
     </div>
   </div>
 </div>
-@push('links')
-<style>
-  p strong{
-    font-size: 24px;
-    color: #3e3e3e;
-  }
-</style>
-@endpush
