@@ -7,6 +7,7 @@ use App\Message;
 use App\Page;
 use App\Plan;
 use App\Project;
+use App\ProjectBlockApartment;
 use App\Service;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\SEOTools;
@@ -76,9 +77,9 @@ class PageController extends Controller
     function project($slug)
     {
         $Meta = Page::where('slug', 'projeler')->first();
-        $Product = Project::where("slug", $slug)->active()->first();
+        $Project = Project::where("slug", $slug)->active()->first();
         $Others = Project::where("slug", '!=', $slug)->order()->active()->limit(4, 0)->get();
-        return ['Page' => $Product, 'Other' => $Others, 'Meta' => $Meta, 'View' => 'project-details'];
+        return ['Page' => $Project, 'Other' => $Others, 'Meta' => $Meta, 'View' => 'project-details'];
 
     }
     function recipe($slug)
@@ -98,11 +99,11 @@ class PageController extends Controller
                 "json.*" => "required",
             ],
             [
-                "json.*.required" => "This field is required.",
+                "json.*.required" => "Bu alan zorunludur.",
             ]
         );
         if ($validator->fails()) {
-            return redirect()->to(url()->previous())->with('dialog', '1')->with('status', 'error')->with('message', 'Please check all form fields')->withErrors($validator)->withInput(request()->all());
+            return redirect()->to(url()->previous())->with('dialog', '1')->with('status', 'error')->with('message', 'Lütfen tüm form alanlarını kontrol edin.')->withErrors($validator)->withInput(request()->all());
         }
 
         $validated = $validator->validate();
@@ -131,9 +132,9 @@ class PageController extends Controller
             }
 
 
-            return redirect()->to(url()->previous())->with('dialog', '1')->with('status', 'success')->with('message', 'Your message has been delivered successfully.');
+            return redirect()->to(url()->previous())->with('dialog', '1')->with('status', 'success')->with('message', 'Mesajınız başarıyla iletildi.');
         } else {
-            return redirect()->to(url()->previous())->with('dialog', '1')->with('status', 'error')->with('message', 'An error occurred while transmitting your message. Please try again later.');
+            return redirect()->to(url()->previous())->with('dialog', '1')->with('status', 'error')->with('message', 'Mesajınız iletilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
         }
 
     }
@@ -147,5 +148,13 @@ class PageController extends Controller
 
         $content = view('sitemap.index', compact('Page', 'Projects','Plans','News'));
         return response($content)->header('Content-Type', 'application/xml');
+    }
+
+    function floors(Request $request) {
+        return ProjectBlockApartment::where('block_id',$request->block_id)->where('type',1)->select(['floor as kat'])->groupBy('floor')->get();
+    }
+
+    function apartments(Request $request) {
+        return ProjectBlockApartment::where('block_id',$request->block_id)->where('type',1)->where('floor',$request->kat)->select(['number AS daire','plan as daire_plani'])->get();
     }
 }

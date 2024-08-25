@@ -18,6 +18,8 @@ Route::group(['prefix' => 'admin'], function () {
 });
 Route::post('search', [PageController::class, 'search'])->name('search');
 Route::post('store', [PageController::class, 'store'])->name('store');
+Route::post('floors', [PageController::class, 'floors'])->name('floors');
+Route::post('apartments', [PageController::class, 'apartments'])->name('apartments');
 
 
 Route::get('sitemap.xml', [PageController::class, 'sitemap'])->name('sitemap');

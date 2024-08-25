@@ -10,7 +10,14 @@
         "company" => 'Firma',
         'message' => "Mesaj",
         "file" => "Dosya",
-        "about" => "Hakkında Bilgi"
+        "about" => "Hakkında Bilgi",
+        "kat" => "Kat",
+        "blok" => "Blok",
+        "ara_odeme_tarih" => "Ara Ödeme Tarihi",
+        "ara_odeme_tutar" => "Ara Ödeme Tutar",
+        "takas_deger" => "Takas Değeri",
+        "extra_odeme" => "Extra Ödeme",
+        "extra_odeme" => "Aylık Bütçe"
     ];
 @endphp
 @foreach ($data as $key => $item)

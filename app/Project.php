@@ -11,7 +11,7 @@ class Project extends Model
         1 => "Devam Eden",
         2 => "Tamamlanan",
     ];
-
+    
     function getType() {
         return $this->types[$this->type];
     }
@@ -26,5 +26,18 @@ class Project extends Model
     public function scopeOrder($query)
     {
         return $query->orderBy('ordering')->orderBy('id', 'desc');
+    }
+    
+    function blocks() {
+        return $this->hasMany(ProjectBlock::class,'project_id','id');
+    }
+    
+    function leftCount(){
+        $blocks = $this->hasMany(ProjectBlock::class,'project_id','id')->get();
+        $count = 0;
+        foreach ($blocks as $key => $value) {
+            $count += $value->leftCount();
+        }
+        return $count;
     }
 }
