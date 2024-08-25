@@ -16,16 +16,29 @@
         "ara_odeme_tarih" => "Ara Ödeme Tarihi",
         "ara_odeme_tutar" => "Ara Ödeme Tutar",
         "takas_deger" => "Takas Değeri",
-        "extra_odeme" => "Extra Ödeme",
-        "extra_odeme" => "Aylık Bütçe"
+        "extra_odeme" => "Extra ödeme var mı?",
+        "isim" => "İsim",
+        "soyisim" => "Soyisim",
+        "daire" => "Daire",
+        "nakit" => "Nakit Tutar",
+        "proje" => "İlgili Proje",
+        "takas" => "Takas var mı?",
+        "aylik_butce" => "Aylık Bütçe",
+        'telefon' => "Telefon",
+        'takas_tanimi' => "Takas Tanımı",
+        "mesaj" => "Mesaj"
     ];
+    $sira = [
+        'isim','soyisim','email','telefon','blok','kat','daire','nakit','aylik_butce','extra_odeme','ara_odeme_tutar','ara_odeme_tarih','takas','takas_deger','takas_tanimi','mesaj'
+    ];
+    $data = collect($data)->only($sira)->toArray();
 @endphp
-@foreach ($data as $key => $item)
-    <strong style="width:100px;display:inline-block">{{$lang[$key] ?? $key}}:</strong>
+@foreach ($sira as $key)
+    <strong style="width:200px;display:inline-block">{{$lang[$key] ?? $key}}:</strong>
     @if ($key == "file")
-    <a href="/{{asset($item)}}" target="_blank">Görüntüle</a>
+    <a href="/{{asset($data[$key])}}" target="_blank">Görüntüle</a>
     @else
-    {{$item}} 
+    {{$data[$key] ?? ''}} 
     @endif
     <br>
 @endforeach 
