@@ -20,16 +20,16 @@
 @if (!empty($dataTypeContent->getKey()))
 <script>
     $('.orderable-images').sortable({
-        handle:'.sortable-el'
-    });
-    $('.orderable-images').on('change', function (e) {
-        $.post('{{ route('voyager.orderImages',['table' => $dataType->slug ,'id' => $dataTypeContent->getKey(),"field" => $row->field]) }}', {
-            order: JSON.stringify($('.orderable-images').sortable('toArray')),
-            _token: '{{ csrf_token() }}'
-        }, function (data) {
-            toastr.success("Başarılı");
-            window.location.reload()
-        });
+        handle:'.sortable-el',
+        stop: function (event, ui) {
+            $.post('{{ route('voyager.orderImages',['table' => $dataType->slug ,'id' => $dataTypeContent->getKey(),"field" => $row->field]) }}', {
+                order: JSON.stringify($('.orderable-images').sortable('toArray')),
+                _token: '{{ csrf_token() }}'
+            }, function (data) {
+                toastr.success("Başarılı");
+                window.location.reload();
+            });
+        }
     });
 </script>
 @endif
