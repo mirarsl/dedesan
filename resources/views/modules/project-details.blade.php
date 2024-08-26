@@ -4,7 +4,7 @@
             <div class="col-12">
                 <div class="single-page">
                     <div class="project-page-thumb mb-50">
-                        <img class="w-100" src="{{asset($Page->image)}}" alt="img">
+                        <img class="w-100" src="{{asset($Page->image)}}" alt="{{$Page->title}}">
                         @if (count($Page->speciality) > 0)
                         <aside class="sidebar-area">
                             <div class="widget widget_project_info style2">
@@ -283,88 +283,98 @@
 </div>
 <div class="video-area overflow-hidden">
     <div class="video-wrap mt-20">
-        <img src="assets/img/project/project_details1_2.png" alt="img">
-        <a href="https://www.youtube.com/watch?v=Mp8IXI1kzvQ" class="play-btn style3 popup-video"><i class="ri-play-fill"></i></a>
-    </div>
-    <div class="container">
-        <p class="mt-40 mb-0">Industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leapinto electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release 
-            letraset sheets containing.</p>
+        <div class="container">
+            <div class="gallery row">
+                @foreach (json_decode($Page->gallery) as $item)
+                <div class="col mb-3">
+                    <a href="{{asset($item)}}" data-fancybox="gallery"><img src="{{asset($item)}}" alt="{{$Page->title}}"></a>
+                </div>
+                @endforeach 
+            </div>
         </div>
     </div>
-    
-    
-    <div class="pt-60 pb-60 overflow-hidden">
-        <div class="container">
-            <div class="row justify-content-between align-items-center gy-40">
-                <div class="col-lg-6">
-                    <div class="title-area text-md-start text-center">
-                        <h2 class="sec-title">Features of Project</h2>
-                    </div>
-                    <div class="process-thumb2-1">
-                        <img src="assets/img/normal/process-thumb2-1.png" alt="img">
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="pt-60 pb-60 overflow-hidden">
+    <div class="container">
+        <div class="row justify-content-between align-items-center gy-40">
+            <div class="col-lg-6">
+                <div class="title-area text-md-start text-center">
+                    <h2 class="sec-title">Features of Project</h2>
                 </div>
-                <div class="col-lg-6">
-                    <div class="process-grid-list style2">
-                        <div class="process-grid-list-bg-text">
-                            BENEFIT
+                <div class="process-thumb2-1">
+                    <img src="assets/img/normal/process-thumb2-1.png" alt="img">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="process-grid-list style2">
+                    <div class="process-grid-list-bg-text">
+                        BENEFIT
+                    </div>
+                    <div class="process-grid">
+                        <div class="process-grid-number">01</div>
+                        <div class="process-grid-details">
+                            <h3 class="process-grid-title">Advanced Technology </h3>
+                            <p class="process-grid-text">We craft unique digital experiences. With more years of expertise we design </p>
                         </div>
-                        <div class="process-grid">
-                            <div class="process-grid-number">01</div>
-                            <div class="process-grid-details">
-                                <h3 class="process-grid-title">Advanced Technology </h3>
-                                <p class="process-grid-text">We craft unique digital experiences. With more years of expertise we design </p>
-                            </div>
+                    </div>
+                    <div class="process-grid">
+                        <div class="process-grid-number">02</div>
+                        <div class="process-grid-details">
+                            <h3 class="process-grid-title">Trusted Company </h3>
+                            <p class="process-grid-text">We craft unique digital experiences. With more years of expertise we design </p>
                         </div>
-                        <div class="process-grid">
-                            <div class="process-grid-number">02</div>
-                            <div class="process-grid-details">
-                                <h3 class="process-grid-title">Trusted Company </h3>
-                                <p class="process-grid-text">We craft unique digital experiences. With more years of expertise we design </p>
-                            </div>
+                    </div>
+                    <div class="process-grid">
+                        <div class="process-grid-number">03</div>
+                        <div class="process-grid-details">
+                            <h3 class="process-grid-title">Professional Teams </h3>
+                            <p class="process-grid-text">We craft unique digital experiences. With more years of expertise we design </p>
                         </div>
-                        <div class="process-grid">
-                            <div class="process-grid-number">03</div>
-                            <div class="process-grid-details">
-                                <h3 class="process-grid-title">Professional Teams </h3>
-                                <p class="process-grid-text">We craft unique digital experiences. With more years of expertise we design </p>
-                            </div>
-                        </div>
-                        <div class="process-grid">
-                            <div class="process-grid-number">04</div>
-                            <div class="process-grid-details">
-                                <h3 class="process-grid-title">Stylistic formula method</h3>
-                                <p class="process-grid-text">We craft unique digital experiences. With more years of expertise we design </p>
-                            </div>
+                    </div>
+                    <div class="process-grid">
+                        <div class="process-grid-number">04</div>
+                        <div class="process-grid-details">
+                            <h3 class="process-grid-title">Stylistic formula method</h3>
+                            <p class="process-grid-text">We craft unique digital experiences. With more years of expertise we design </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @push('links')
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
-    />
-    @endpush
-    @push('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.9/jquery.inputmask.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.9/bindings/inputmask.binding.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(":input").inputmask();
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    @if (session()->has('dialog'))
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        Swal.fire({
-            title: "{{session('status') == 'success' ? 'Success':'Error'}}",
-            text: "{{session('message')}}",
-            icon: "{{session('status')}}",
-        });
-    </script>
-    @endif
-    @endpush
+</div>
+@push('links')
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+/>
+@endpush
+@push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.9/jquery.inputmask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.9/bindings/inputmask.binding.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script>
+    $(document).ready(function() {
+        $(":input").inputmask();
+    });
+</script>
+@if (session()->has('dialog'))
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    Swal.fire({
+        title: "{{session('status') == 'success' ? 'Success':'Error'}}",
+        text: "{{session('message')}}",
+        icon: "{{session('status')}}",
+    });
+</script>
+@endif
+@endpush
