@@ -15395,6 +15395,16 @@ li.trackback {
   border: 0;  
   font-weight: 100;
 }
+@media (max-width:991px) {
+  .project-left{
+    padding: 2em;
+  }
+}
+@media (max-width:767px) {
+  .project-left{
+    padding: 1em;
+  }
+}
 .project-left h3{
   font-weight: 400;
 }

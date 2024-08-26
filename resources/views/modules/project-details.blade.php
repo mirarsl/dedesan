@@ -37,6 +37,9 @@
                                 <div class="col-lg-9">
                                     <h3>Satışlarımız Devam Ediyor. <strong>Son {{$Page->leftCount()}} Daire !</strong></h3>
                                     <span class="desig">Bilgi almak için teklif formumuzu doldurunuz.</span>
+                                    @if (!(empty($Page->end_date)) && $Page->end_date > now())
+                                    <h4><div id="timer"></div></h4>
+                                    @endif
                                 </div>
                                 <div class="col-lg-3">
                                     <a data-fancybox href="#offer-form" class="btn btn-primary">Teklif Formu</a>
@@ -343,3 +346,83 @@ href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
 </script>
 @endif
 @endpush
+@if (!(empty($Page->end_date)) && $Page->end_date > now())
+@push('links')
+<style>
+    #timer {
+        font-size: 40px;
+        line-height: 1;
+        font-weight: 200;
+        color: black;
+        margin-top: .75em;
+    }
+    #timer div {
+        margin-right: .15em;
+        display: inline-flex;
+        align-items: end;
+    }
+    #timer div span {
+        font-size: 24px;
+        line-height: 1.2;
+        margin-left: .25em;
+    }
+    #timer small {
+        font-size: 30px;
+    }
+    @media (max-width:767px){
+        #timer small {
+            display: block;
+            margin: .5em 0;
+        }
+        #timer div {
+            margin-right: .1em;
+            margin-bottom: .3em;
+        }
+    }
+    @media (max-width:550px){
+        #timer small {
+            display: block;
+            margin: .5em 0;
+        }
+        #timer div {
+            margin-right: .1em;
+            margin-bottom: .3em;
+        }
+        #timer div.me-2 {
+            display: none;
+        }
+    }
+</style>
+@endpush
+@push('scripts')
+<script>
+    function updateTimer() {
+        future  = Date.parse("{{$Page->end_date}}");
+        now     = new Date();
+        diff    = future - now;
+        
+        days  = Math.floor( diff / (1000*60*60*24) );
+        hours = Math.floor( diff / (1000*60*60) );
+        mins  = Math.floor( diff / (1000*60) );
+        secs  = Math.floor( diff / 1000 );
+        
+        d = days;
+        h = hours - days  * 24;
+        m = mins  - hours * 60;
+        s = secs  - mins  * 60;
+        
+        document.getElementById("timer")
+        .innerHTML =
+        '<small>Proje teslimine </small>'+
+        '<div> ' + d + '<span> gün</span></div>' +
+        '<div> ' + h + '<span> saat</span></div>'+
+        '<div> ' + m + '<span> dakika</span></div>'+
+        '<div class="me-2"> ' + s + '<span> saniye</span></div>'+
+        '<small>kaldı</small>'
+    }
+    updateTimer();
+    // setInterval('updateTimer()', 1000 );
+    
+</script>
+@endpush
+@endif
