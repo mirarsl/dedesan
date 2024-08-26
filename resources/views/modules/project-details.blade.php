@@ -22,7 +22,7 @@
                     <div class="mb-50">
                         {!! $Page->text !!}
                     </div>
-                    
+                    @if (count($Page->blocks))
                     <div class="product-tab-area">
                         <ul class="nav product-tab-style1" id="projectTab" role="tablist">
                             @foreach ($Page->blocks as $item)
@@ -80,6 +80,7 @@
                             @endforeach
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -285,6 +286,7 @@
     </form>
 </div>
 <div class="video-area overflow-hidden">
+    @if (!(empty($Page->gallery)))
     <div class="video-wrap mt-20">
         <div class="container">
             <div class="gallery row">
@@ -296,6 +298,7 @@
             </div>
         </div>
     </div>
+    @endif
     <div class="container project-links">
         <div class="row justify-content-center">
             @foreach ($Page->links as $item)
