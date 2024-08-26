@@ -21,7 +21,7 @@
 <script>
     $('.orderable-images').sortable({
         handle:'.sortable-el',
-        stop: function (event, ui) {
+        onEnd: function (event) {
             $.post('{{ route('voyager.orderImages',['table' => $dataType->slug ,'id' => $dataTypeContent->getKey(),"field" => $row->field]) }}', {
                 order: JSON.stringify($('.orderable-images').sortable('toArray')),
                 _token: '{{ csrf_token() }}'
