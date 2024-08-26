@@ -29,16 +29,18 @@
         "mesaj" => "Mesaj"
     ];
     $sira = [
-        'isim','soyisim','email','telefon','blok','kat','daire','nakit','aylik_butce','extra_odeme','ara_odeme_tutar','ara_odeme_tarih','takas','takas_deger','takas_tanimi','mesaj'
+        'name','isim','soyisim','email', 'phone','subject','message', 'telefon','blok','kat','daire','nakit','aylik_butce','extra_odeme','ara_odeme_tutar','ara_odeme_tarih','takas','takas_deger','takas_tanimi','mesaj'
     ];
     $data = collect($data)->only($sira)->toArray();
 @endphp
 @foreach ($sira as $key)
+    @if (array_key_exists($key, $data))
     <strong style="width:200px;display:inline-block">{{$lang[$key] ?? $key}}:</strong>
-    @if ($key == "file")
-    <a href="/{{asset($data[$key])}}" target="_blank">Görüntüle</a>
-    @else
-    {{$data[$key] ?? ''}} 
-    @endif
-    <br>
+        @if ($key == "file")
+        <a href="/{{asset($data[$key])}}" target="_blank">Görüntüle</a>
+        @else
+        {{$data[$key] ?? ''}} 
+        @endif
+        <br>
+    @endif 
 @endforeach 

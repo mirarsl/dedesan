@@ -336,7 +336,7 @@ href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     Swal.fire({
-        title: "{{session('status') == 'success' ? 'Success':'Error'}}",
+        title: "{{session('status') == 'success' ? 'Başarılı':'Hata!'}}",
         text: "{{session('message')}}",
         icon: "{{session('status')}}",
     });
