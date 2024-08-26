@@ -293,62 +293,27 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <img src="" alt="">
+    <div class="container project-links">
+        <div class="row justify-content-center">
+            @foreach ($Page->links as $item)
+            <div class="col-auto">
+                <a class="d-flex align-items-center gap-2" href="{{$item->link ?? 'javascript:void(0);'}}">
+                    <img src="{{asset($item->image)}}" alt="{{$item->title}}">
+                    <h2 class="mb-0">{{$item->title}}</h2>
+                </a>
             </div>
+            @endforeach
         </div>
     </div>
 </div>
-
-
 <div class="pt-60 pb-60 overflow-hidden">
     <div class="container">
         <div class="row justify-content-between align-items-center gy-40">
-            <div class="col-lg-6">
-                <div class="title-area text-md-start text-center">
-                    <h2 class="sec-title">Features of Project</h2>
-                </div>
-                <div class="process-thumb2-1">
-                    <img src="assets/img/normal/process-thumb2-1.png" alt="img">
-                </div>
+            @if ($Page->file != "")
+            <div style="overflow:hidden; height:400px;">
+                <iframe height="600" src="{{$Page->file}}" frameborder="0" style="overflow:hidden;" scrolling="no"></iframe>
             </div>
-            <div class="col-lg-6">
-                <div class="process-grid-list style2">
-                    <div class="process-grid-list-bg-text">
-                        BENEFIT
-                    </div>
-                    <div class="process-grid">
-                        <div class="process-grid-number">01</div>
-                        <div class="process-grid-details">
-                            <h3 class="process-grid-title">Advanced Technology </h3>
-                            <p class="process-grid-text">We craft unique digital experiences. With more years of expertise we design </p>
-                        </div>
-                    </div>
-                    <div class="process-grid">
-                        <div class="process-grid-number">02</div>
-                        <div class="process-grid-details">
-                            <h3 class="process-grid-title">Trusted Company </h3>
-                            <p class="process-grid-text">We craft unique digital experiences. With more years of expertise we design </p>
-                        </div>
-                    </div>
-                    <div class="process-grid">
-                        <div class="process-grid-number">03</div>
-                        <div class="process-grid-details">
-                            <h3 class="process-grid-title">Professional Teams </h3>
-                            <p class="process-grid-text">We craft unique digital experiences. With more years of expertise we design </p>
-                        </div>
-                    </div>
-                    <div class="process-grid">
-                        <div class="process-grid-number">04</div>
-                        <div class="process-grid-details">
-                            <h3 class="process-grid-title">Stylistic formula method</h3>
-                            <p class="process-grid-text">We craft unique digital experiences. With more years of expertise we design </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endif
         </div>
     </div>
 </div>

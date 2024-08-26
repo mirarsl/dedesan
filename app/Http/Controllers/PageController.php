@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Message;
+use App\News;
 use App\Page;
 use App\Plan;
 use App\Project;
@@ -82,12 +83,20 @@ class PageController extends Controller
         return ['Page' => $Project, 'Other' => $Others, 'Meta' => $Meta, 'View' => 'project-details'];
 
     }
-    function recipe($slug)
+    function news($slug)
     {
-        $Meta = Page::where('slug', 'recipes')->first();
-        $Plan = Plan::where("slug", $slug)->active()->first();
-        $Others = Plan::where("slug", '!=', $slug)->order()->active()->limit(4, 0)->get();
-        return ['Page' => $Plan, 'Other' => $Others, 'Meta' => $Meta, 'Route' => 'recipe', 'View' => 'recipe-details'];
+        $Meta = Page::where('slug', 'haberler')->first();
+        $News = News::where("slug", $slug)->active()->first();
+        $Others = News::where("slug", '!=', $slug)->order()->active()->limit(4, 0)->get();
+        return ['Page' => $News, 'Other' => $Others, 'Meta' => $Meta, 'Route' => 'news', 'View' => 'news-details'];
+    }
+
+    function blog($slug)
+    {
+        $Meta = Page::where('slug', 'blog')->first();
+        $Blogs = Blog::where("slug", $slug)->active()->first();
+        $Others = Blog::where("slug", '!=', $slug)->order()->active()->limit(4, 0)->get();
+        return ['Page' => $Blogs, 'Other' => $Others, 'Meta' => $Meta, 'Route' => 'blog', 'View' => 'blog-details'];
     }
 
     function store(Request $request)

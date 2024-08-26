@@ -29,13 +29,6 @@
 			<span class="loader"></span>
 		</div>
 	</div>
-	<div class="popup-search-box">
-		<button class="searchClose"><i class="ri-close-line"></i></button>
-		<form action="{{route('search')}}" method="POST">
-			<input type="text" placeholder="Arama Yap">
-			<button type="submit"><i class="ri-search-line"></i></button>
-		</form>
-	</div>
 	<div class="mobile-menu-wrapper">
 		<div class="mobile-menu-area">
 			<div class="mobile-logo">
@@ -77,9 +70,6 @@
 										<a class="link" href="tel:{{$sharedContent['Contact']->phone1}}">{{$sharedContent['Contact']->phone1}}</a>
 									</div>
 								</div>
-								<button type="button" class="search-btn searchBoxToggler simple-icon">
-									<i class="ri-search-line"></i>
-								</button>
 							</div>
 						</div>
 					</div>

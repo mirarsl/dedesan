@@ -1,62 +1,60 @@
-<div class="send-msg-section">
+<section class="contact-area-2 space-bottom overflow-hidden">        
  <div class="container">
-  <div class="row align-items-center">
-   <div class="col-lg-6 col-md-12">
-    <div class="section-title">
-     <h3 class="wow fadeInUp" data-wow-delay="0.50s">{{$module->top}}</h3>
-     <h2 class="text-anime">{{$module->title}}</h2>
-    </div>
-    
-    <div class="send-msg-body">
-     <div class="wow fadeInUp" data-wow-delay="0.75s">{!! $module->text !!}</div>
-    </div>
-   </div>
-   
-   <div class="col-lg-6 col-md-12">					
-    <div class="contact-form wow fadeInUp" data-wow-delay="1.25s">
-     <form action="{{route('store')}}" method="POST">
-      @csrf
-      <input type="hidden" name="type" value="Contact Form">
-      <div class="row">
-       <div class="form-group col-md-12 mb-4">
-        <input type="text" value="{{old('json.name')}}" name="json[name]" class="form-control" id="name" placeholder="Name"  >
         @error('json.name')
         <div class="help-block with-errors">{{$message}}</div>
         @enderror
-       </div>
-       
-       <div class="form-group col-md-12 mb-4">
-        <input type="email" value="{{old('json.email')}}" name ="json[email]" class="form-control" id="email" placeholder="Email"  >
         @error('json.email')
         <div class="help-block with-errors">{{$message}}</div>
         @enderror
-       </div>
-       
-       <div class="form-group col-md-12 mb-4">
-        <input type="text" value="{{old('json.phone')}}" name="json[phone]" class="form-control" id="phone" placeholder="Phone"  >
         @error('json.phone')
         <div class="help-block with-errors">{{$message}}</div>
         @enderror
-       </div>
-       
-       <div class="form-group col-md-12 mb-4">
-        <textarea name="json[message]" class="form-control" id="msg" rows="4" placeholder="Write a Message" >{{old('json.message')}}</textarea>
         @error('json.message')
         <div class="help-block with-errors">{{$message}}</div>
         @enderror
-       </div>
-       
-       <div class="col-md-12 button-group">
-        <button type="submit" class="btn-default">Submit Now</button>
-        <div id="msgSubmit" class="h3 text-left hidden"></div>
-       </div>
+  <div class="contact-wrap2 space overflow-hidden">
+   <div class="row gy-60 justify-content-lg-end justify-content-center">
+    <div class="col-xl-7">
+     <div class="contact-form-wrap">
+      <div class="title-area">
+       <span class="sub-title text-theme">{{$module->top}} </span>
+       <h2 class="sec-title">{{$module->title}}</h2>
       </div>
-     </form>
-    </div>
+      <form action="{{route('store')}}" method="POST">
+       @csrf
+       <input type="hidden" name="type" value="İletişim Formu">
+       <div class="row gy-4">
+        <div class="col-md-12">
+         <div class="form-group">
+          <input type="text" class="form-control" name="json[name]" id="name" placeholder="İsim Soyisim">
+         </div>
+        </div>
+        <div class="col-md-6">
+         <div class="form-group">
+          <input type="email" class="form-control" name="json[email]" id="email" placeholder="E-Posta">
+         </div>
+        </div>
+        <div class="col-md-6">
+         <div class="form-group">
+          <input type="tel" class="form-control" name="json[phone]" id="phone" placeholder="Telefon">
+         </div>
+        </div>
+        <div class="col-12">
+         <div class="form-group ">
+          <textarea name="json[message]" id="message" cols="30" rows="3" class="form-control" placeholder="Mesajınız"></textarea>
+         </div>
+        </div>
+        <div class="form-btn col-12">
+         <button class="btn w-100">Gönder <i class="ri-arrow-right-up-line"></i></button>
+        </div>
+       </div>
+       <p class="form-messages mb-0 mt-3"></p>
+      </form>
+     </div>
+    </div>            
    </div>
   </div>
  </div>
-</div>
 @push('scripts')
 
 @if (session()->has('dialog'))
@@ -70,4 +68,4 @@
 </script>
 @endif
 @endpush
-
+</section>   

@@ -27,6 +27,10 @@ class Project extends Model
     {
         return $query->orderBy('ordering')->orderBy('id', 'desc');
     }
+
+    function links() {
+        return $this->hasMany(ProjectLink::class,'project_id','id');
+    }
     
     function blocks() {
         return $this->hasMany(ProjectBlock::class,'project_id','id');

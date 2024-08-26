@@ -6914,7 +6914,7 @@ blockquote.has-text-align-right:before,
   left: 30px;
   top: 30px;
 }
-.blog-single .blog-img .blog-date a {
+.blog-single .blog-img .blog-date > span {
   background: var(--theme-color);
   height: 70px;
   width: 70px;
@@ -6928,7 +6928,7 @@ blockquote.has-text-align-right:before,
   font-weight: 400;
   padding: 12px 10px 11px;
 }
-.blog-single .blog-img .blog-date a span {
+.blog-single .blog-img .blog-date > span span {
   display: block;
   font-size: 36px;
   font-weight: 600;
@@ -9667,12 +9667,12 @@ li.trackback {
 
 /* Contact Page---------------------------------- */
 .contact-page-card .contact-page-card-details {
-  padding: 40px 40px 0;
+  padding: 40px;
   /* Large devices */
 }
 @media (max-width: 1199px) {
   .contact-page-card .contact-page-card-details {
-    padding: 30px 30px 0;
+    padding: 30px;
   }
 }
 .contact-page-card .contact-page-card_title {
@@ -9694,8 +9694,16 @@ li.trackback {
     font-size: 24px;
   }
 }
+.contact-page-card{
+  position: relative;
+}
+.contact-page-card h3{
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 600;
+}
 .contact-page-card .contact-page-card-text {
-  font-size: 18px;
+  font-size: 14px;
   color: var(--body-color);
   margin-bottom: 12px;
 }
@@ -9708,17 +9716,22 @@ li.trackback {
 }
 .contact-page-card .contact-page-card_link {
   color: var(--body-color);
+  font-size: 14px;
 }
 .contact-page-card .contact-page-card_link:hover {
   color: var(--theme-color);
 }
 .contact-page-card .contact-page-card-thumb {
-  margin-top: 120px;
+  margin-top: 20px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 .contact-page-card .contact-page-card-thumb img {
-  height: 280px;
+  height: 180px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: right;
 }
 
 .map-sec {
@@ -11852,6 +11865,17 @@ li.trackback {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+.project-links a{
+  border: 1px solid gray;
+  padding: .5em 1em;
+  border-radius: 12px;
+}
+.project-links img{
+  height: 40px;
+}
+.project-links h2{
+  font-size: 14px;
 }
 
 /* Video 2 ---------------------------------- */
