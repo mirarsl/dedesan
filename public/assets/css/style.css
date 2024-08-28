@@ -9658,6 +9658,7 @@ li.trackback {
 }
 @media (max-width: 1199px) {
   .contact-wrap2 {
+    padding-top: 50px !important;
     padding-right: 60px;
     padding-left: 60px;
     background-position: right;
@@ -9744,6 +9745,11 @@ li.trackback {
   width: 100%;
   object-fit: contain;
   object-position: right;
+}
+@media (max-width:991px) {
+  .contact-page-card .contact-page-card-thumb{
+    display: none;
+  }
 }
 
 .map-sec {
@@ -11406,9 +11412,27 @@ li.trackback {
 .blog-card:hover .blog-img img {
   transform: scale(1.08);
 }
-@media (max-width: 1299px) {
+@media (max-width: 1400px) {
+  .blog-card .blog-img img{
+    height: 380px;
+  }
+}
+@media (max-width: 1200px) {
   .blog-card .blog-title {
     font-size: 24px;
+  }
+  .blog-card .blog-img img{
+    height: 320px;
+  }
+}
+@media (max-width:767px) {
+  .blog-card .blog-img img{
+    height: 380px;
+  }
+}
+@media (max-width:500px) {
+  .blog-card .blog-img img{
+    height: 300px;
   }
 }
 
