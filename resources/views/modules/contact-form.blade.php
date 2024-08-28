@@ -2,7 +2,7 @@
       <div class="container">
             <div class="contact-wrap2 space overflow-hidden">
                   <div class="row gy-60 justify-content-lg-end justify-content-center">
-                        <div class="col-xl-7">
+                        <div class="col-xl-12">
                               <div class="contact-form-wrap">
                                     <div class="title-area">
                                           <span class="sub-title text-theme">{{$module->top}} </span>
