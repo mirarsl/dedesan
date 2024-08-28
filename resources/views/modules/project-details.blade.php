@@ -52,7 +52,7 @@
                             @foreach ($Page->blocks as $block)
                             <div class="tab-pane row fade {{$loop->index == 0 ? ' show active':''}}" id="{{Str::slug($block->title)}}" role="tabpanel" aria-labelledby="{{Str::slug($block->title)}}-tab">
                                 @foreach ($block->apartments as $apartment)
-                                <div class="col-md-6">
+                                <div class="col-lg-6">
                                     <div class="apartment">
                                         <a data-fancybox href="{{asset($apartment->image)}}"><img src="{{asset($apartment->image)}}" alt="{{$Page->title}} {{$block->title}} Blok {{$apartment->number}} No"></a>
                                         <div class="informations">
@@ -288,7 +288,7 @@
 <div class="video-area overflow-hidden">
     @if (!(empty($Page->gallery)))
     <div class="video-wrap mt-20">
-        <div class="container">
+        <div class="container d-flex justify-content-center">
             <div class="gallery row">
                 @foreach (json_decode($Page->gallery) as $item)
                 <div class="col mb-3">
@@ -302,7 +302,7 @@
     <div class="container project-links">
         <div class="row justify-content-center">
             @foreach ($Page->links as $item)
-            <div class="col-auto">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                 <a class="d-flex align-items-center gap-2" href="{{$item->link ?? 'javascript:void(0);'}}">
                     <img src="{{asset($item->image)}}" alt="{{$item->title}}">
                     <h2 class="mb-0">{{$item->title}}</h2>
