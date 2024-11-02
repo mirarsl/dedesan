@@ -55,10 +55,10 @@
                                 <div class="col-lg-6">
                                     <div class="apartment">
                                         <div class="gallery">
-                                            <a data-fancybox="{{Str::slug($block->title).'-'.$apartment->number}}" href="{{asset($apartment->image)}}"><img src="{{asset($apartment->image)}}" alt="{{$Page->title}} {{$block->title}} Blok {{$apartment->number}} No"></a>
+                                            <a data-fancybox="{{Str::slug($block->title).'-'.$apartment->number}}" href="{{asset($apartment->image)}}"><img loading="lazy" src="{{asset($apartment->image)}}" alt="{{$Page->title}} {{$block->title}} Blok {{$apartment->number}} No"></a>
                                             @if (isset($apartment->gallery))
                                                 @foreach (json_decode($apartment->gallery) as $item)
-                                                <a data-fancybox="{{Str::slug($block->title).'-'.$apartment->number}}" href="{{asset($item)}}"><img src="{{asset($item)}}" alt="{{$Page->title}} {{$block->title}} Blok {{$apartment->number}} No"></a>
+                                                <a data-fancybox="{{Str::slug($block->title).'-'.$apartment->number}}" href="{{asset($item)}}"><img loading="lazy" src="{{asset($item)}}" alt="{{$Page->title}} {{$block->title}} Blok {{$apartment->number}} No"></a>
                                                 @endforeach
                                             @endif
                                         </div>
