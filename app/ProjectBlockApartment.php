@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 
 class ProjectBlockApartment extends Model
@@ -20,5 +21,14 @@ class ProjectBlockApartment extends Model
  {
   return $query->orderBy('ordering')->orderBy('id', 'desc');
  }
+
+ protected function gallery(): Attribute
+ {
+  return Attribute::make(
+   get: fn ($value) => json_decode($value, true),
+  );
+ }
+
+ 
  
 }

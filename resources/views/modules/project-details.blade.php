@@ -54,7 +54,14 @@
                                 @foreach ($block->apartments as $apartment)
                                 <div class="col-lg-6">
                                     <div class="apartment">
-                                        <a data-fancybox href="{{asset($apartment->image)}}"><img src="{{asset($apartment->image)}}" alt="{{$Page->title}} {{$block->title}} Blok {{$apartment->number}} No"></a>
+                                        <div class="gallery">
+                                            <a data-fancybox="{{Str::slug($block->title).'-'.$apartment->number}}" href="{{asset($apartment->image)}}"><img src="{{asset($apartment->image)}}" alt="{{$Page->title}} {{$block->title}} Blok {{$apartment->number}} No"></a>
+                                            @if (isset($apartment->gallery))
+                                                @foreach ($apartment->gallery as $item)
+                                                <a data-fancybox="{{Str::slug($block->title).'-'.$apartment->number}}" href="{{asset($item)}}"><img src="{{asset($item)}}" alt="{{$Page->title}} {{$block->title}} Blok {{$apartment->number}} No"></a>
+                                                @endforeach
+                                            @endif
+                                        </div>
                                         <div class="informations">
                                             <h3>{{$block->title}} Blok</h3>
                                             <h4>{{$apartment->floor}}</h4>
