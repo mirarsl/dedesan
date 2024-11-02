@@ -8,10 +8,16 @@
       <div class="contact-page-card-text">
        <h3><i class="ri-phone-line"></i> Telefon</h3>
        <a class="contact-page-card_link" href="tel:{{$module->data()->phone1}}">{{$module->data()->phone1}}</a>
+       @if (isset($module->data()->phone2))
+       <a class="contact-page-card_link" href="tel:{{$module->data()->phone2}}">{{$module->data()->phone2}}</a>
+       @endif
       </div>
       <div class="contact-page-card-text">
        <h3><i class="ri-mail-line"></i> E-Posta</h3>
        <a class="contact-page-card_link" href="mailto:{{$module->data()->email1}}">{{$module->data()->email1}}</a>
+       @if (isset($module->data()->email2))
+       <a class="contact-page-card_link" href="mailto:{{$module->data()->email2}}">{{$module->data()->email2}}</a>
+       @endif
       </div>   
       <div class="contact-page-card-text">
        <h3><i class="ri-map-2-line"></i> Adres</h3>
