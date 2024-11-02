@@ -55,6 +55,8 @@ class MyVoyagerController extends Controller
             $row->$field = json_encode($new_list);
             $update = $row->save();
             return $update;
+        }else{
+            return false;
         }
     }
 }
