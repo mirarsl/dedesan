@@ -38,7 +38,7 @@ class MyVoyagerController extends Controller
     }
     function orderImages(Request $request)
     {
-        $table = $request->table;
+        $table = str_replace('-','_',$request->table);
         $field = $request->field;
         $id = $request->id;
         $list = json_decode($request->order);
