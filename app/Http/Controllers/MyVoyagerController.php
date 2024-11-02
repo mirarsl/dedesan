@@ -56,7 +56,7 @@ class MyVoyagerController extends Controller
             $update = $row->save();
             return $update;
         }else{
-            return false;
+            return response()->json(['error' => 'Data not found'], 401);
         }
     }
 }
