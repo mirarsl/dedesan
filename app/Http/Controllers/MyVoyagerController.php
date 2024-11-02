@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ use TCG\Voyager\Events\BreadUpdated;
 
 class MyVoyagerController extends Controller
 {
-    function orderFiles(Request $request){
+    function orderFiles(Request $request)
+    {
         $table = $request->table;
         $field = $request->field;
         $id = $request->id;
@@ -34,22 +36,25 @@ class MyVoyagerController extends Controller
         $update = $row->save();
         return $update;
     }
-    function orderImages(Request $request){
+    function orderImages(Request $request)
+    {
         $table = $request->table;
         $field = $request->field;
         $id = $request->id;
         $list = json_decode($request->order);
+        $data = Voyager::model('DataType')->whereName($table)->first();
+        if ($data) {
+            $dataType = $data->model_name;
+            $row =  app($dataType)->find($id);
+            $json = json_decode($row->$field);
 
-        $dataType = Voyager::model('DataType')->whereName($table)->first()->model_name;
-        $row =  app($dataType)->find($id);
-        $json = json_decode($row->$field);
-
-        $new_list = [];
-        foreach ($list as $key => $value) {
-            $new_list[$key] = $json[$value];
+            $new_list = [];
+            foreach ($list as $key => $value) {
+                $new_list[$key] = $json[$value];
+            }
+            $row->$field = json_encode($new_list);
+            $update = $row->save();
+            return $update;
         }
-        $row->$field = json_encode($new_list);
-        $update = $row->save();
-        return $update;
     }
 }
