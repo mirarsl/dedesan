@@ -32,7 +32,7 @@
                     table: '{{ $dataType->slug }}',
                 }, function (data) {
                     toastr.success("Başarılı");
-                    window.location.reload();
+                    // window.location.reload();
                 });
             }
         });
