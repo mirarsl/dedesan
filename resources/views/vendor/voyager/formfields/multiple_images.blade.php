@@ -1,9 +1,7 @@
 <br>
 @if(isset($dataTypeContent) && isset($dataTypeContent->{$row->field}))
 <?php
-if(isset($dataTypeContent->{$row->field})){
     $images = json_decode($dataTypeContent->{$row->field});
-}
 ?>
 
 @if($images != null)
