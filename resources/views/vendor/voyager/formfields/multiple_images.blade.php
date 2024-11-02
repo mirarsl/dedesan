@@ -2,8 +2,6 @@
 @if(isset($dataTypeContent) && isset($dataTypeContent->{$row->field}))
 <?php
 if(isset($dataTypeContent->{$row->field})){
-    $images = $dataTypeContent->{$row->field};
-}else{
     $images = json_decode($dataTypeContent->{$row->field});
 }
 ?>
