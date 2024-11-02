@@ -79,7 +79,7 @@
 	</header>
 	
 	@yield('content')
-	
+	<a href="https://wa.me/905422449128" class="whatsapp-float" target="_blank"><i class="ri ri-whatsapp-line float"></i></a>
 	<footer class="footer-wrapper footer-layout3" data-bg-src="assets/img/bg/footer.jpg">    
 		<div class="container">
 			<div class="widget-area">
@@ -164,140 +164,20 @@
 			<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
 		</svg>
 	</div>
-	{{-- <footer class="footer footer-default-padding">
-		<div class="container">
-			<div class="row footer-row">
-				<div class="col-lg-4 mb-30">
-					<div class="footer-widget">
-						<div class="footer-logo">
-							<img src="assets/images/logo.png" alt="{{setting('site.title')}}">
-						</div>
-						<p class="mb-30">{{$sharedContent['Contact']->address1}}</p>
-					</div>
-				</div>
-				
-				
-				
-				<div class="col-sm-6 col-lg-4 mb-30">
-					<div class="footer-widget mb-0">
-						<h4>Quick Links</h4>
-						<div class="line-footer"></div>
-						<div class="row">
-							<div class="col-12">
-								<ul class="footer-link mb-0 row">
-									{{menu('Header', 'menus.footer')}}
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				
-				
-				
-				
-				<div class="col-sm-6 col-lg-4">
-					<div class="footer-widget">
-						<h4>Social Media</h4>
-						<ul class="social-media mt-3">
-							@if (isset($sharedContent['Social']->facebook))
-							<li><a href="{{$sharedContent['Social']->facebook}}" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
-							@endif
-							@if (isset($sharedContent['Social']->twitter))
-							<li><a href="{{$sharedContent['Social']->twitter}}" class="twitter"><i class="fab fa-twitter"></i></a></li>
-							@endif
-							@if (isset($sharedContent['Social']->instagram))
-							<li><a href="{{$sharedContent['Social']->instagram}}" class="instagram"><i class="fab fa-instagram"></i></a></li>
-							@endif
-							@if (isset($sharedContent['Social']->linkedin))
-							<li><a href="{{$sharedContent['Social']->linkedin}}" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-							@endif
-							@if (isset($sharedContent['Social']->youtube))
-							<li><a href="{{$sharedContent['Social']->youtube}}" class="youtube"><i class="fab fa-youtube"></i></a></li>
-							@endif
-						</ul> 
-					</div>
-				</div>
-			</div>
-			<div class="row row-contact">
-				<div class="col-lg-4 col-sm-6 no-padding">
-					<div class="single-item">
-						<span class="flaticon-call"></span>
-						@if (isset($sharedContent['Contact']->phone1))
-						<p><a href="tel:{{$sharedContent['Contact']->phone1}}">{{$sharedContent['Contact']->phone1}}</a></p>
-						@endif
-						@if (isset($sharedContent['Contact']->phone2))
-						<p><a href="tel:{{$sharedContent['Contact']->phone2}}">{{$sharedContent['Contact']->phone2}}</a></p>
-						@endif
-					</div>
-				</div>
-				<div class="col-lg-4 col-sm-6 no-padding">
-					<div class="single-item">
-						<span class="flaticon-email"></span>
-						@if (isset($sharedContent['Contact']->email1))
-						<p><a href="mailto:{{$sharedContent['Contact']->email1}}">{{$sharedContent['Contact']->email1}}</a></p>
-						@endif
-						@if (isset($sharedContent['Contact']->email2))
-						<p><a href="mailto:{{$sharedContent['Contact']->email2}}">{{$sharedContent['Contact']->email2}}</a></p>
-						@endif
-					</div>  
-				</div>
-				<div class="col-lg-4 col-sm-12 no-padding">
-					<div class="single-item">
-						<span class="flaticon-location"></span>
-						<p>{{$sharedContent['Contact']->address1}}</p>
-						@if (isset($sharedContent['Contact']->address2))
-						<p>{{$sharedContent['Contact']->address2}}</p>
-						@endif
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer-bar">
-			<div class="container">
-				<div class="footer-copy">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="copyright">
-								&copy; {{date('Y')}} Made with <i class="fa fa-heart"></i> by 
-								<a rel="nofollow" href="https://bario.com.tr" target="_blank">Bario.</a>
-							</div>
-						</div>
-						
-						<div class="col-md-6">
-							<ul class="links-of-footer">
-								{{menu('Footer Alt Bar','menus.footer-alt')}}
-							</ul>
-						</div>
-					</div>
-				</div>   
-			</div> 
-		</div>
-	</footer> --}}
 	<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-	<!-- Slick Slider -->
 	<script src="assets/js/slick.min.js"></script>
-	<!-- Range Slider -->
 	<script src="assets/js/jquery-ui.min.js"></script>
-	<!-- Bootstrap -->
 	<script src="assets/js/bootstrap.min.js"></script>
-	<!-- Magnific Popup -->
 	<script src="assets/js/jquery.magnific-popup.min.js"></script>
-	<!-- Counter Up -->
 	<script src="assets/js/jquery.counterup.min.js"></script>
-	<!-- Marquee -->
 	<script src="assets/js/jquery.marquee.min.js"></script>
-	<!-- Isotope Filter -->
 	<script src="assets/js/imagesloaded.pkgd.min.js"></script>
 	<script src="assets/js/isotope.pkgd.min.js"></script>
-	<!-- Nice Select -->
 	<script src="assets/js/nice-select.min.js"></script>
-	<!-- WOW -->
 	<script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/waypoints.min.js"></script>
 	
 	
-	<!-- Main Js File -->
 	<script src="assets/js/main.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 	<script>

@@ -431,7 +431,7 @@ href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
         '<small>kaldı</small>'
     }
     updateTimer();
-    // setInterval('updateTimer()', 1000 );
+    setInterval('updateTimer()', 1000 );
     
 </script>
 @endpush
