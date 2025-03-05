@@ -14,7 +14,7 @@ class Blog extends Model
 
     public function scopeOrder($query)
    {
-       return $query->orderBy('ordering')->orderBy('id','desc');
+       return $query->orderBy('ordering')->orderBy('created_at','desc');
    }    
 
    public function date() {

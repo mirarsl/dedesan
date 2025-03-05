@@ -152,10 +152,10 @@ class PageController extends Controller
     {
         $Page = Page::all()->except(1);
         $Projects = Project::active()->get();
-        $Plans = Plan::active()->get();
-        $News = Blog::active()->get();
+        $News = News::active()->get();
+        $Blogs = Blog::active()->get();
 
-        $content = view('sitemap.index', compact('Page', 'Projects','Plans','News'));
+        $content = view('sitemap.index', compact('Page', 'Projects', 'News', 'Blogs'));
         return response($content)->header('Content-Type', 'application/xml');
     }
 
