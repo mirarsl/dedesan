@@ -22,6 +22,7 @@
 	<link rel="stylesheet" href="assets/css/nice-select.min.css">
 	<link rel="stylesheet" href="assets/css/style.css?ver={{rand(1111,9999)}}">
 	@stack('links')
+	{{setting('site.header_libs')}}
 </head>
 <body>
 	<div class="preloader ">
