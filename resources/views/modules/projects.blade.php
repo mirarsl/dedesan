@@ -14,7 +14,7 @@
 					<div class="portfolio-card-details">
 						<div class="media-left">
 							<span class="portfolio-card-subtitle">{{$item->getType()}}</span>
-							<h4 class="portfolio-card-title"><a href="{{route('project',$item->slug)}}">{{$item->title}}</a></h4>
+							<h3 class="portfolio-card-title"><a href="{{route('project',$item->slug)}}">{{$item->title}}</a></h3>
 							<p class="portofolio-card-text">{{$item->short_text}}</p>
 						</div>  
 					</div>
