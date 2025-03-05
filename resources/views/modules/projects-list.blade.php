@@ -13,7 +13,7 @@
           </a>
           <div class="portfolio-card-details">
             <span class="portfolio-card-subtitle">{{$item->getType()}}</span>
-            <h3 class="portfolio-card-title"><a href="{{route($Page->route_name,$item->slug)}}">{{$item->title}}</a></h3>
+            <h2 class="portfolio-card-title"><a href="{{route($Page->route_name,$item->slug)}}">{{$item->title}}</a></h2>
             <a href="{{route($Page->route_name,$item->slug)}}" class="btn-with-icon">
               Devamını Gör
               <span class="btn-icon">

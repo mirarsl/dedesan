@@ -12,7 +12,7 @@
       </div>
      </div>
      <div class="blog-content">
-      <h3 class="blog-title"><a href="{{route($Page->route_name,$item->slug)}}">{{$item->title}}</a></h3>
+      <h2 class="blog-title"><a href="{{route($Page->route_name,$item->slug)}}">{{$item->title}}</a></h2>
       <div class="blog-text">{{ method_exists($item, 'short_text') ? $item->short_text() : '' }}</div>
       <a href="{{route($Page->route_name,$item->slug)}}" class="btn">Devamını Gör <i class="ri-arrow-right-up-line"></i></a>
      </div>
