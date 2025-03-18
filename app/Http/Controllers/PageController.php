@@ -106,9 +106,17 @@ class PageController extends Controller
             [
                 "type" => "required",
                 "json.*" => "required",
+                "json.ara_odeme_tutar" => "required_if:json.extra_odeme,Evet",
+                "json.ara_odeme_tarih" => "required_if:json.extra_odeme,Evet",
+                "json.takas_deger" => "required_if:json.takas,Evet",
+                "json.takas_tanimi" => "required_if:json.takas,Evet",
             ],
             [
                 "json.*.required" => "Bu alan zorunludur.",
+                "json.ara_odeme_tutar.required_if" => "Bu alan zorunludur.",
+                "json.ara_odeme_tarih.required_if" => "Bu alan zorunludur.",
+                "json.takas_deger.required_if" => "Bu alan zorunludur.",
+                "json.takas_tanimi.required_if" => "Bu alan zorunludur.",
             ]
         );
         if ($validator->fails()) {
