@@ -12,7 +12,7 @@
 					<div class="row align-items-center">
 						<div class="col-xxl-7 col-xl-8">
 							<div class="hero-subtitle">{{setting('site.title')}} <img src="assets/img/icon/long-arrow-right2.svg" alt="img"></div>
-							<h2 class="hero-title">{{$item->title}}</h2>
+							<div class="hero-title">{{$item->title}}</div>
 							<p class="hero-text">{{$item->text}}</p>
 						</div>
 						@if (!(empty($item->button1_title)) && !(empty($item->button1_link)))

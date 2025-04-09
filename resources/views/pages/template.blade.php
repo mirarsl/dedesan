@@ -29,11 +29,18 @@
     </div>
 </div>
 @if (!(empty($Page->data())))
-    @if (View::exists('modules.' . $Page->list_name))
-        @include('modules.' . $Page->list_name, ['module' => $Page])
-    @else
-        @include('modules.list', ['module' => $Page])
-    @endif
+@if (View::exists('modules.' . $Page->list_name))
+@include('modules.' . $Page->list_name, ['module' => $Page])
+@else
+@include('modules.list', ['module' => $Page])
+@endif
+@endif
+@if ($Page->text)
+<div class="about-area-2 space-top overflow-hidden">
+    <div class="container">
+        {!! $Page->text !!}
+    </div>
+</div>
 @endif
 @yield('modules')
 @endsection
