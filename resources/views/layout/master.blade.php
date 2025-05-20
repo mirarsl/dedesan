@@ -181,12 +181,12 @@
 	
 	<script src="assets/js/main.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 	<script>
 		var lazyLoadInstance = new LazyLoad({
 			elements_selector: ".lazy",
 			threshold: 0,
 		});
-	</script>
 		Fancybox.bind("[data-fancybox]");
 	</script>
 	@stack('scripts')
