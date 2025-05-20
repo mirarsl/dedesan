@@ -27,7 +27,7 @@
     
     /*---------- On Load Function ----------*/
     $(window).on("load", function () {
-        $(".preloader").fadeOut();
+        // $(".preloader").fadeOut();
         /*-------------------------------------------------
         wow js init
         --------------------------------------------------*/
@@ -39,14 +39,14 @@
     });
     
     /*---------- Preloader ----------*/
-    if ($(".preloader").length > 0) {
-        $(".preloaderCls").each(function () {
-            $(this).on("click", function (e) {
-                e.preventDefault();
-                $(".preloader").css("display", "none");
-            });
-        });
-    }
+    // if ($(".preloader").length > 0) {
+    //     $(".preloaderCls").each(function () {
+    //         $(this).on("click", function (e) {
+    //             e.preventDefault();
+    //             $(".preloader").css("display", "none");
+    //         });
+    //     });
+    // }
     
     /*-----------  One Page Nav ----------*/
     function onePageNav(element) {

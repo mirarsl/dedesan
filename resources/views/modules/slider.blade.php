@@ -2,7 +2,7 @@
 	<div class="hero-slider4 global-carousel" data-slide-show="1" data-fade="true">
 		@foreach ($module->data() as $item)
 		<div class="hero-slide" data-overlay="title" data-opacity="7">
-			<img src="{{asset($item->image)}}" alt="">
+			<img class="lazy" data-src="{{asset($item->image)}}" alt="{{$item->title}}">
 			<div class="container">
 				<div class="hero-style4">
 					<div class="hero-shadow-text">{{$item->top}}</div>

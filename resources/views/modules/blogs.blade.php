@@ -22,7 +22,7 @@
    <div class="col-md-6 col-lg-4">
     <div class="blog-card style4">
      <div class="blog-img">
-      <img src="{{asset($item->image)}}" alt="{{$item->title}}">
+      <img class="lazy" data-src="{{asset($item->image)}}" alt="{{$item->title}}">
       <div class="blog-date">
        <span><span>{{ $item->date()->format('d') }}</span>{{ $item->date()->translatedFormat('M') }}</span>
        <div class="year">{{ $item->date()->format('Y') }}</div>

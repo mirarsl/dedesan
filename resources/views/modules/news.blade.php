@@ -20,7 +20,7 @@
     <div class="blog-card">
      <a href="{{route('news',$item->slug)}}">
       <div class="blog-img">
-       <img src="{{asset($item->image)}}" alt="{{$item->title}}">
+       <img class="lazy" data-src="{{asset($item->image)}}" alt="{{$item->title}}">
        <div class="blog-date">
         <span><span>{{ $item->date()->format('d') }}</span>{{ $item->date()->translatedFormat('M') }}</span>
         <div class="year">{{ $item->date()->format('Y') }}</div>

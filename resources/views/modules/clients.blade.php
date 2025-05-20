@@ -5,7 +5,7 @@
    @foreach ($module->data() as $item)
    <div class="col-lg-auto">
     <div class="client-logo">
-     <img src="{{asset($item->image)}}" alt="{{$item->title}}">
+     <img class="lazy" data-src="{{asset($item->image)}}" alt="{{$item->title}}">
     </div>
    </div>
    @endforeach

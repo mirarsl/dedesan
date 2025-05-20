@@ -12,7 +12,7 @@
 			<div class="col-lg-6">
 				<div class="portfolio-card">
 					<div class="portfolio-card-thumb">
-						<img src="{{asset($item->image)}}" alt="{{$item->title}}">
+						<img class="lazy" data-src="{{asset($item->image)}}" alt="{{$item->title}}">
 					</div>
 					<div class="portfolio-card-details">
 						<div class="media-left">

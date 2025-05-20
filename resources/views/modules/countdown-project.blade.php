@@ -1,6 +1,6 @@
 @if (count($module->data()) > 0)
 <div class="cta-area-4" id="contact-sec">
- <div class="cta-wrap4 text-center" data-bg-src="{{asset($module->data()->first()->image)}}" data-overlay="title" data-opacity="6">
+ <div class="cta-wrap4 text-center lazy" data-bg-src="{{asset($module->data()->first()->image)}}" data-overlay="title" data-opacity="6">
   <div class="title-area mb-30">
    <span class="sub-title text-white">{{$module->top}}</span>
    <h2 class="cta-title style2">{{$module->title}}</h2>

@@ -25,11 +25,11 @@
 	{!! setting('site.header_libs') !!}
 </head>
 <body>
-	<div class="preloader ">
+	{{-- <div class="preloader ">
 		<div class="preloader-inner">
 			<span class="loader"></span>
 		</div>
-	</div>
+	</div> --}}
 	<div class="mobile-menu-wrapper">
 		<div class="mobile-menu-area">
 			<div class="mobile-logo">
@@ -180,8 +180,13 @@
 	
 	
 	<script src="assets/js/main.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"></script>
 	<script>
+		var lazyLoadInstance = new LazyLoad({
+			elements_selector: ".lazy",
+			threshold: 0,
+		});
+	</script>
 		Fancybox.bind("[data-fancybox]");
 	</script>
 	@stack('scripts')

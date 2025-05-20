@@ -4,7 +4,7 @@
 				<div class="col-xl-6">
 					<div class="about-thumb1 mb-40 mb-lg-0 p-0"> 
 						<div class="about-img-1">
-							<img src="{{asset($module->image)}}" alt="{{$module->title}}">
+							<img class="lazy" data-src="{{asset($module->image)}}" alt="{{$module->title}}">
 						</div>
 					</div>
 				</div>
