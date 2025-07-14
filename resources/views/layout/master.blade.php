@@ -149,7 +149,7 @@
 					<div class="col-auto align-self-center"><p class="copyright-text text-center">© {{date('Y')}} Tüm Hakları Saklıdır.</p></div>
 					<div class="col-auto">
 						<p>Made with <i class="ri-heart-fill"></i> by 
-							<a class="text-white" rel="nofollow" href="https://bario.com.tr" target="_blank">Bario.</a></p>
+							<a class="text-white" rel="dofollow" href="https://bario.com.tr" target="_blank">Bario.</a></p>
 					</div>
 					<div class="col-auto">
 						<div class="footer-links">
